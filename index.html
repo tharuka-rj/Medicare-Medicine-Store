@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicare Hospitals - Medicine Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="manifest" href="./favicons/site.webmanifest">
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Header Section with Navigation and Cart -->
+    <header>
+        <div class="header-title">
+            <img src="./images/icon-512x512.png" alt="Medicare Logo" class="header-logo">
+            <h1>Medicare Hospitals (Pvt.) Ltd. - Medicine Store</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="services-dropdown">
+                    <a href="#">Our Services</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Prescription Medicines</a></li>
+                        <li><a href="#">OTC Medicines</a></li>
+                        <li><a href="#">Healthcare Products</a></li>
+                        <li><a href="#">Medical Supplies</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon-container">
+            <button id="cartButton" class="cart-button">
+                <img src="./images/cart.webp" class="cart-icon" alt="Cart">
+                <span class="cart-badge">0</span>
+            </button>
+        </div>
+    </header>
+
+<!-- Medicine Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart">
+            <div class="cart-header">
+                <h2>Medicine Cart</h2>
+                <button class="close-cart" id="closeCart">X</button>
+            </div>
+            <div class="cart-content">
+                <table id="cartTable">
+                <thead>
+                    <tr>
+                    <th>Medicine Name</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Final Price</th>
+                </tr>
+            </thead>
+            <tbody>
+              <!-- Cart items will be added here automatically by JavaScript -->
+           </tbody>
+           <tfoot>
+               <tr>
+                <td><strong>Total Price</strong></td>
+                <td colspan="2"></td>
+                <td>$<span id="totalPrice">0</span></td>
+               </tr>
+           </tfoot>
+           </table>
+           <div class="cart-actions">
+               <button class="buy-now-button" id = "buyNowButton">Buy Now</button>
+               <button class="clear-cart-button" id = "clearCartButton">Clear Cart</button>
+           </div>
+           </div>
+           
+        </div>
+    </div>
+
+    <main>
+        <!-- Analgesics Section -->
+        <section class="category">
+            <h2>Analgesics</h2>
+            <div class="medicine-row">
+              <div class="medicine-card">
+                <img src="./images/meds/Analgesics/Aspirin.webp" alt="Aspirin" class="medicine-image">
+                <h3>Aspirin (100mg)</h3>
+                <p class="price">$8</p>
+                <div class = "medicine-actions">
+                    <input type="number" class="quantity-input" min="0" value="0">
+                     <button class="add-to-cart-button" data-name="Aspirin (100mg)" data-price="8">Add to Cart</button>
+                </div>
+                <div class = "fav-actions">
+                    <button class = "add-to-favorite-button" data-name="Aspirin (100mg)" data-price="8">Add to Favorite</button>
+                    <button class = "apply-favorite-button">Apply Favorite</button>
+                </div>
+             </div>
+
+             <div class="medicine-card">
+                <img src="./images/meds/Analgesics/Ketoprofen.webp" alt="Ketoprofen" class="medicine-image">
+                <h3>Ketoprofen (4/50mg)</h3>
+                <p class="price">$20</p>
+                <div class = "medicine-actions">
+                    <input type="number" class="quantity-input" min="0" value="0">
+                     <button class="add-to-cart-button" data-name="Ketoprofen (4/50mg)" data-price="20">Add to Cart</button>
+                </div>
+                 <div class = "fav-actions">
+                     <button class = "add-to-favorite-button" data-name="Ketoprofen (4/50mg)" data-price="20">Add to Favorite</button>
+                    <button class = "apply-favorite-button">Apply Favorite</button>
+                  </div>
+             </div>
+
+             <div class="medicine-card">
+                <img src="./images/meds/Analgesics/Almotriptan.webp" alt="Almotriptan" class="medicine-image">
+                <h3>Almotriptan (12.5mg)</h3>
+                <p class="price">$75</p>
+                <div class = "medicine-actions">
+                    <input type="number" class="quantity-input" min="0" value="0">
+                     <button class="add-to-cart-button" data-name="Almotriptan (12.5mg)" data-price="75">Add to Cart</button>
+                 </div>
+                 <div class = "fav-actions">
+                    <button class = "add-to-favorite-button" data-name="Almotriptan (12.5mg)" data-price="75">Add to Favorite</button>
+                    <button class = "apply-favorite-button">Apply Favorite</button>
+                 </div>
+             </div>
+             <div class="medicine-card">
+                <img src="./images/meds/Analgesics/Acetaminophen.webp" alt="Acetaminophen" class="medicine-image">
+                <h3>Acetaminophen/Paracetamol (500mg)</h3>
+                <p class="price">$6</p>
+                <div class = "medicine-actions">
+                    <input type="number" class="quantity-input" min="0" value="0">
+                     <button class="add-to-cart-button" data-name="Acetaminophen/Paracetamol (500mg)" data-price="6">Add to Cart</button>
+                </div>
+                 <div class = "fav-actions">
+                   <button class = "add-to-favorite-button" data-name="Acetaminophen/Paracetamol (500mg)" data-price="6">Add to Favorite</button>
+                    <button class = "apply-favorite-button">Apply Favorite</button>
+                 </div>
+             </div>
+
+             <div class="medicine-card">
+                <img src="./images/meds/Analgesics/Eletriptan.webp" alt="Eletriptan" class="medicine-image">
+               <h3>Eletriptan (40mg)</h3>
+               <p class="price">$60</p>
+               <div class = "medicine-actions">
+                    <input type="number" class="quantity-input" min="0" value="0">
+                    <button class="add-to-cart-button" data-name="Eletriptan (40mg)" data-price="60">Add to Cart</button>
+                </div>
+                 <div class = "fav-actions">
+                   <button class = "add-to-favorite-button" data-name="Eletriptan (40mg)" data-price="60">Add to Favorite</button>
+                    <button class = "apply-favorite-button">Apply Favorite</button>
+                  </div>
+            </div>
+        </div>
+        </section>
+    
+        <!-- Antibiotics Section -->
+
+         <section class="category">
+            <h2>Antibiotics</h2>
+            <div class="medicine-row">
+               <div class="medicine-card">
+                    <img src="./images/meds/Antibiotics/Metronidazole.webp" alt="Metronidazole" class="medicine-image">
+                    <h3>Metronidazole (400mg)</h3>
+                    <p class="price">$10</p>
+                    <div class = "medicine-actions">
+                        <input type="number" class="quantity-input" min="0" value="0">
+                         <button class="add-to-cart-button" data-name="Metronidazole (400mg)" data-price="10">Add to Cart</button>
+                   </div>
+                   <div class = "fav-actions">
+                      <button class = "add-to-favorite-button" data-name="Metronidazole (400mg)" data-price="10">Add to Favorite</button>
+                       <button class = "apply-favorite-button">Apply Favorite</button>
+                    </div>
+               </div>
+                <div class="medicine-card">
+                     <img src="./images/meds/Antibiotics/Clindamycin.webp" alt="Clindamycin" class="medicine-image">
+                     <h3>Clindamycin (300mg)</h3>
+                     <p class="price">$25</p>
+                     <div class = "medicine-actions">
+                         <input type="number" class="quantity-input" min="0" value="0">
+                         <button class="add-to-cart-button" data-name="Clindamycin (300mg)" data-price="25">Add to Cart</button>
+                     </div>
+                    <div class = "fav-actions">
+                        <button class = "add-to-favorite-button" data-name="Clindamycin (300mg)" data-price="25">Add to Favorite</button>
+                        <button class = "apply-favorite-button">Apply Favorite</button>
+                    </div>
+                </div>
+                <div class="medicine-card">
+                    <img src="./images/meds/Antibiotics/Ciprofloxacin.webp" alt="Ciprofloxacin" class="medicine-image">
+                    <h3>Ciprofloxacin (500mg)</h3>
+                    <p class="price">$12</p>
+                     <div class = "medicine-actions">
+                       <input type="number" class="quantity-input" min="0" value="0">
+                        <button class="add-to-cart-button" data-name="Ciprofloxacin (500mg)" data-price="12">Add to Cart</button>
+                     </div>
+                    <div class = "fav-actions">
+                      <button class = "add-to-favorite-button" data-name="Ciprofloxacin (500mg)" data-price="12">Add to Favorite</button>
+                      <button class = "apply-favorite-button">Apply Favorite</button>
+                  </div>
+               </div>
+              <div class="medicine-card">
+                  <img src="./images/meds/Antibiotics/Cephalexin.webp" alt="Cephalexin" class="medicine-image">
+                  <h3>Cephalexin (100mg)</h3>
+                  <p class="price">$10</p>
+                   <div class = "medicine-actions">
+                        <input type="number" class="quantity-input" min="0" value="0">
+                         <button class="add-to-cart-button" data-name="Cephalexin (100mg)" data-price="10">Add to Cart</button>
+                   </div>
+                  <div class = "fav-actions">
+                    <button class = "add-to-favorite-button" data-name="Cephalexin (100mg)" data-price="10">Add to Favorite</button>
+                    <button class = "apply-favorite-button">Apply Favorite</button>
+                  </div>
+             </div>
+           <div class="medicine-card">
+              <img src="./images/meds/Antibiotics/Doxycycline.webp" alt="Doxycycline" class="medicine-image">
+              <h3>Doxycycline (100mg)</h3>
+              <p class="price">$15</p>
+                 <div class = "medicine-actions">
+                     <input type="number" class="quantity-input" min="0" value="0">
+                    <button class="add-to-cart-button" data-name="Doxycycline (100mg)" data-price="15">Add to Cart</button>
+                  </div>
+                 <div class = "fav-actions">
+                  <button class = "add-to-favorite-button" data-name="Doxycycline (100mg)" data-price="15">Add to Favorite</button>
+                    <button class = "apply-favorite-button">Apply Favorite</button>
+                 </div>
+            </div>
+              <div class="medicine-card">
+                  <img src="./images/meds/Antibiotics/Amoxicillin.webp" alt="Amoxicillin" class="medicine-image">
+                  <h3>Amoxicillin (250mg)</h3>
+                  <p class="price">$10</p>
+                     <div class = "medicine-actions">
+                       <input type="number" class="quantity-input" min="0" value="0">
+                       <button class="add-to-cart-button" data-name="Amoxicillin (250mg)" data-price="10">Add to Cart</button>
+                    </div>
+                    <div class = "fav-actions">
+                       <button class = "add-to-favorite-button" data-name="Amoxicillin (250mg)" data-price="10">Add to Favorite</button>
+                      <button class = "apply-favorite-button">Apply Favorite</button>
+                   </div>
+              </div>
+         </div>
+        </section>
+
+    <!-- Antidepressants Section -->
+
+        <section class="category">
+            <h2>Antidepressants</h2>
+            <div class="medicine-row">
+                <div class="medicine-card">
+                   <img src="./images/meds/Antidepressants/Olanzapine.webp" alt="Olanzapine" class="medicine-image">
+                   <h3>Olanzapine (10mg)</h3>
+                   <p class="price">$20</p>
+                   <div class = "medicine-actions">
+                       <input type="number" class="quantity-input" min="0" value="0">
+                         <button class="add-to-cart-button" data-name="Olanzapine (10mg)" data-price="20">Add to Cart</button>
+                   </div>
+                   <div class = "fav-actions">
+                        <button class = "add-to-favorite-button" data-name="Olanzapine (10mg)" data-price="20">Add to Favorite</button>
+                        <button class = "apply-favorite-button">Apply Favorite</button>
+                  </div>
+               </div>
+                <div class="medicine-card">
+                    <img src="./images/meds/Antidepressants/Fluoxetine.webp" alt="Fluoxetine" class="medicine-image">
+                    <h3>Fluoxetine (20mg)</h3>
+                    <p class="price">$8</p>
+                     <div class = "medicine-actions">
+                         <input type="number" class="quantity-input" min="0" value="0">
+                         <button class="add-to-cart-button" data-name="Fluoxetine (20mg)" data-price="8">Add to Cart</button>
+                    </div>
+                    <div class = "fav-actions">
+                        <button class = "add-to-favorite-button" data-name="Fluoxetine (20mg)" data-price="8">Add to Favorite</button>
+                        <button class = "apply-favorite-button">Apply Favorite</button>
+                  </div>
+               </div>
+                <div class="medicine-card">
+                    <img src="./images/meds/Antidepressants/Aripiprazole.webp" alt="Aripiprazole" class="medicine-image">
+                    <h3>Aripiprazole (10mg)</h3>
+                    <p class="price">$15</p>
+                     <div class = "medicine-actions">
+                       <input type="number" class="quantity-input" min="0" value="0">
+                         <button class="add-to-cart-button" data-name="Aripiprazole (10mg)" data-price="15">Add to Cart</button>
+                   </div>
+                    <div class = "fav-actions">
+                       <button class = "add-to-favorite-button" data-name="Aripiprazole (10mg)" data-price="15">Add to Favorite</button>
+                        <button class = "apply-favorite-button">Apply Favorite</button>
+                    </div>
+               </div>
+             <div class="medicine-card">
+                  <img src="./images/meds/Antidepressants/Clomipramine.webp" alt="Clomipramine" class="medicine-image">
+                  <h3>Clomipramine (50mg)</h3>
+                  <p class="price">$30</p>
+                   <div class = "medicine-actions">
+                       <input type="number" class="quantity-input" min="0" value="0">
+                        <button class="add-to-cart-button" data-name="Clomipramine (50mg)" data-price="30">Add to Cart</button>
+                    </div>
+                    <div class = "fav-actions">
+                       <button class = "add-to-favorite-button" data-name="Clomipramine (50mg)" data-price="30">Add to Favorite</button>
+                        <button class = "apply-favorite-button">Apply Favorite</button>
+                   </div>
+              </div>
+            <div class="medicine-card">
+                    <img src="./images/meds/Antidepressants/Mirtazapine.webp" alt="Mirtazapine" class="medicine-image">
+                    <h3>Mirtazapine (15mg)</h3>
+                    <p class="price">$15</p>
+                     <div class = "medicine-actions">
+                      <input type="number" class="quantity-input" min="0" value="0">
+                        <button class="add-to-cart-button" data-name="Mirtazapine (15mg)" data-price="15">Add to Cart</button>
+                    </div>
+                    <div class = "fav-actions">
+                       <button class = "add-to-favorite-button" data-name="Mirtazapine (15mg)" data-price="15">Add to Favorite</button>
+                      <button class = "apply-favorite-button">Apply Favorite</button>
+                    </div>
+            </div>
+                <div class="medicine-card">
+                    <img src="./images/meds/Antidepressants/Bupropion.webp" alt="Bupropion" class="medicine-image">
+                    <h3>Bupropion (100mg)</h3>
+                    <p class="price">$12</p>
+                    <div class = "medicine-actions">
+                       <input type="number" class="quantity-input" min="0" value="0">
+                       <button class="add-to-cart-button" data-name="Bupropion (100mg)" data-price="12">Add to Cart</button>
+                    </div>
+                   <div class = "fav-actions">
+                        <button class = "add-to-favorite-button" data-name="Bupropion (100mg)" data-price="12">Add to Favorite</button>
+                        <button class = "apply-favorite-button">Apply Favorite</button>
+                    </div>
+              </div>
+         </div>
+        </section>
+
+        <!-- Antihistamines Section -->
+
+        <section class="category">
+            <h2>Antihistamines</h2>
+              <div class="medicine-row">
+                  <div class="medicine-card">
+                    <img src="./images/meds/Antihistamines/Clemastine.webp" alt="Clemastine" class="medicine-image">
+                    <h3>Clemastine (1mg)</h3>
+                    <p class="price">$25</p>
+                    <div class = "medicine-actions">
+                        <input type="number" class="quantity-input" min="0" value="0">
+                        <button class="add-to-cart-button" data-name="Clemastine (1mg)" data-price="25">Add to Cart</button>
+                    </div>
+                    <div class = "fav-actions">
+                        <button class = "add-to-favorite-button" data-name="Clemastine (1mg)" data-price="25">Add to Favorite</button>
+                        <button class = "apply-favorite-button">Apply Favorite</button>
+                    </div>
+                  </div>
+                  <div class="medicine-card">
+                    <img src="./images/meds/Antihistamines/Promethazine.webp" alt="Promethazine" class="medicine-image">
+                    <h3>Promethazine (100ml Syrup)</h3>
+                    <p class="price">$10</p>
+                    <div class = "medicine-actions">
+                        <input type="number" class="quantity-input" min="0" value="0">
+                        <button class="add-to-cart-button" data-name="Promethazine (100ml Syrup)" data-price="10">Add to Cart</button>
+                    </div>
+                    <div class = "fav-actions">
+                        <button class = "add-to-favorite-button" data-name="Promethazine (100ml Syrup)" data-price="10">Add to Favorite</button>
+                        <button class = "apply-favorite-button">Apply Favorite</button>
+                    </div>
+                  </div>
+                  <div class="medicine-card">
+                    <img src="./images/meds/Antihistamines/Hydroxyzine.webp" alt="Hydroxyzine" class="medicine-image">
+                    <h3>Hydroxyzine (10mg)</h3>
+                    <p class="price">$7</p>
+                    <div class = "medicine-actions">
+                        <input type="number" class="quantity-input" min="0" value="0">
+                        <button class="add-to-cart-button" data-name="Hydroxyzine (10mg)" data-price="7">Add to Cart</button>
+                    </div>
+                    <div class = "fav-actions">
+                        <button class = "add-to-favorite-button" data-name="Hydroxyzine (10mg)" data-price="7">Add to Favorite</button>
+                        <button class = "apply-favorite-button">Apply Favorite</button>
+                    </div>
+                  </div>
+                  <div class="medicine-card">
+                    <img src="./images/meds/Antihistamines/Levocetirizine.webp" alt="Levocetirizine" class="medicine-image">
+                    <h3>Levocetirizine (5mg)</h3>
+                    <p class="price">$12</p>
+                    <div class = "medicine-actions">
+                        <input type="number" class="quantity-input" min="0" value="0">
+                        <button class="add-to-cart-button" data-name="Levocetirizine (5mg)" data-price="12">Add to Cart</button>
+                    </div>
+                    <div class = "fav-actions">
+                        <button class = "add-to-favorite-button" data-name="Levocetirizine (5mg)" data-price="12">Add to Favorite</button>
+                        <button class = "apply-favorite-button">Apply Favorite</button>
+                    </div>
+                  </div>
+              </div>
+        </section>
+
+        <!-- Antihypertensives Section -->
+
+        <section class="category">
+            <h2>Antihypertensives</h2>
+            <div class="medicine-row">
+                <div class="medicine-card">
+                    <img src="./images/meds/Antihypertensives/Atorvastatin.webp" alt="Atorvastatin" class="medicine-image">
+                    <h3>Atorvastatin (40mg)</h3>
+                    <p class="price">$15</p>
+                    <div class = "medicine-actions">
+                        <input type="number" class="quantity-input" min="0" value="0">
+                        <button class="add-to-cart-button" data-name="Atorvastatin (40mg)" data-price="15">Add to Cart</button>
+                    </div>
+                    <div class = "fav-actions">
+                       <button class = "add-to-favorite-button" data-name="Atorvastatin (40mg)" data-price="15">Add to Favorite</button>
+                       <button class = "apply-favorite-button">Apply Favorite</button>
+                    </div>
+               </div>
+              <div class="medicine-card">
+                   <img src="./images/meds/Antihypertensives/Hydralazine.webp" alt="Hydralazine" class="medicine-image">
+                   <h3>Hydralazine (25mg)</h3>
+                   <p class="price">$10</p>
+                     <div class = "medicine-actions">
+                        <input type="number" class="quantity-input" min="0" value="0">
+                         <button class="add-to-cart-button" data-name="Hydralazine (25mg)" data-price="10">Add to Cart</button>
+                    </div>
+                    <div class = "fav-actions">
+                       <button class = "add-to-favorite-button" data-name="Hydralazine (25mg)" data-price="10">Add to Favorite</button>
+                      <button class = "apply-favorite-button">Apply Favorite</button>
+                     </div>
+              </div>
+           <div class="medicine-card">
+                 <img src="./images/meds/Antihypertensives/Valsartan.webp" alt="Valsartan" class="medicine-image">
+                 <h3>Valsartan (80mg)</h3>
+                 <p class="price">$20</p>
+                   <div class = "medicine-actions">
+                      <input type="number" class="quantity-input" min="0" value="0">
+                      <button class="add-to-cart-button" data-name="Valsartan (80mg)" data-price="20">Add to Cart</button>
+                 </div>
+                <div class = "fav-actions">
+                     <button class = "add-to-favorite-button" data-name="Valsartan (80mg)" data-price="20">Add to Favorite</button>
+                     <button class = "apply-favorite-button">Apply Favorite</button>
+                   </div>
+            </div>
+              <div class="medicine-card">
+                   <img src="./images/meds/Antihypertensives/Olmesartan.webp" alt="Olmesartan" class="medicine-image">
+                  <h3>Olmesartan (20mg)</h3>
+                  <p class="price">$18</p>
+                    <div class = "medicine-actions">
+                        <input type="number" class="quantity-input" min="0" value="0">
+                         <button class="add-to-cart-button" data-name="Olmesartan (20mg)" data-price="18">Add to Cart</button>
+                    </div>
+                   <div class = "fav-actions">
+                       <button class = "add-to-favorite-button" data-name="Olmesartan (20mg)" data-price="18">Add to Favorite</button>
+                       <button class = "apply-favorite-button">Apply Favorite</button>
+                     </div>
+              </div>
+            <div class="medicine-card">
+                 <img src="./images/meds/Antihypertensives/Hydrochlorothiazide.webp" alt="Hydrochlorothiazide" class="medicine-image">
+                 <h3>Hydrochlorothiazide (12.5mg)</h3>
+                 <p class="price">$8</p>
+                    <div class = "medicine-actions">
+                       <input type="number" class="quantity-input" min="0" value="0">
+                        <button class="add-to-cart-button" data-name="Hydrochlorothiazide (12.5mg)" data-price="8">Add to Cart</button>
+                     </div>
+                   <div class = "fav-actions">
+                      <button class = "add-to-favorite-button" data-name="Hydrochlorothiazide (12.5mg)" data-price="8">Add to Favorite</button>
+                     <button class = "apply-favorite-button">Apply Favorite</button>
+                 </div>
+            </div>
+               <div class="medicine-card">
+                    <img src="./images/meds/Antihypertensives/Amlodipine.webp" alt="Amlodipine" class="medicine-image">
+                    <h3>Amlodipine (5mg)</h3>
+                    <p class="price">$10</p>
+                     <div class = "medicine-actions">
+                          <input type="number" class="quantity-input" min="0" value="0">
+                         <button class="add-to-cart-button" data-name="Amlodipine (5mg)" data-price="10">Add to Cart</button>
+                     </div>
+                   <div class = "fav-actions">
+                        <button class = "add-to-favorite-button" data-name="Amlodipine (5mg)" data-price="10">Add to Favorite</button>
+                        <button class = "apply-favorite-button">Apply Favorite</button>
+                   </div>
+                </div>
+         </div>
+        </section>
+
+    <!-- Favorites Table -->
+
+    <section class="favorites">
+        <h2>Your Favorites</h2>
+        <table id="favoritesTable">
+            <thead>
+                <tr>
+                    <th>Medicine Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Favorite items will be added here automatically by JavaScript -->
+            </tbody>
+        </table>
+        <button class="clear-favorites-button" id="clearFavoritesButton">Clear Favorites</button>
+    </section>
+    </main>
+
+
+
+<!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📞 Hotline: 1234</p>
+                <p>📧 Email: pharmacy@medicare.lk</p>
+                <p>🏥 Address: No. 123, Hospital Road, Colombo 07</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Delivery Information</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Working Hours</h3>
+                <p>Monday - Friday: 8:00 AM - 10:00 PM</p>
+                <p>Saturday - Sunday: 9:00 AM - 9:00 PM</p>
+                <p>Emergency Services: 24/7</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Medicare Hospitals (Pvt.) Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('service-worker.js')
+            .then(registration => {
+              console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+              console.error('Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
+</body>
+</html>
